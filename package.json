@@ -1,0 +1,14 @@
+{
+  "name": "todo-integration-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Testes de integracao para a API do todo-app",
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:integration": "jest --runInBand"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
+  }
+}
