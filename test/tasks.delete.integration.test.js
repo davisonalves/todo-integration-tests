@@ -4,7 +4,7 @@ const {
   cleanupCreatedTasks,
   createTask,
   request
-} = require('./helpers');
+} = require('../helpers');
 
 afterEach(cleanupCreatedTasks);
 

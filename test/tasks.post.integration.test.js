@@ -5,7 +5,7 @@ const {
   createTask,
   expectTaskShape,
   request
-} = require('./helpers');
+} = require('../helpers');
 
 const MAX_BODY_SIZE = 1024 * 1024;
 

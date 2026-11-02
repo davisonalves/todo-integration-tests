@@ -13,7 +13,7 @@ module.exports = async function setup() {
     .start();
 
   const appImage = await GenericContainer
-    .fromDockerfile(path.resolve(__dirname, '../../todo-app'))
+    .fromDockerfile(path.resolve(__dirname, '../todo-app'))
     .build('todo-integration-tests-app');
 
   const app = await appImage

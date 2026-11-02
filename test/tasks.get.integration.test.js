@@ -5,7 +5,7 @@ const {
   createTask,
   expectTaskShape,
   request
-} = require('./helpers');
+} = require('../helpers');
 
 afterEach(cleanupCreatedTasks);
 
