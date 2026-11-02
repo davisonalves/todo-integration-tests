@@ -8,7 +8,7 @@
     "test:get": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.get.integration.test.js' docker compose up --build --exit-code-from integration-tests",
     "test:post": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.post.integration.test.js' docker compose up --build --exit-code-from integration-tests",
     "test:put": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.put.integration.test.js' docker compose up --build --exit-code-from integration-tests",
-    "test:delete": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.delete.integration.test.js' docker compose up --build --exit-code-from integration-tests",
+    "test:delete": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.delete.integration.test.js' docker compose up --build --exit-code-from integration-tests"
   },
   "devDependencies": {
     "jest": "^30.2.0",
