@@ -5,7 +5,12 @@
   "description": "Testes de integracao para a API do todo-app",
   "scripts": {
     "test": "jest --runInBand",
-    "test:integration": "jest --runInBand"
+    "test:integration": "jest --runInBand",
+    "test:get": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.get.integration.test.js",
+    "test:post": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.post.integration.test.js",
+    "test:put": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.put.integration.test.js",
+    "test:delete": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.delete.integration.test.js",
+    "test:release": "jest --runInBand"
   },
   "devDependencies": {
     "jest": "^30.2.0",

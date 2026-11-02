@@ -31,4 +31,21 @@ Para usar outra URL, defina `BASE_URL`:
 BASE_URL=http://localhost:8080 npm test
 ```
 
+## Executar na pipeline
+
+Para validar somente o método HTTP alterado, execute o script correspondente. Cada comando também roda `routes.integration.test.js`:
+
+```bash
+npm run test:get
+npm run test:post
+npm run test:put
+npm run test:delete
+```
+
+Na pipeline de release, execute a suíte completa:
+
+```bash
+npm run test:release
+```
+
 Os testes removem as tarefas que criam, inclusive quando falham parcialmente.
