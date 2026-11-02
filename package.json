@@ -5,7 +5,6 @@
   "description": "Testes de integracao para a API do todo-app",
   "scripts": {
     "test": "jest --runInBand",
-    "test:release": "npm test",
     "test:get": "jest --runInBand test/routes.integration.test.js test/tasks.get.integration.test.js",
     "test:post": "jest --runInBand test/routes.integration.test.js test/tasks.post.integration.test.js",
     "test:put": "jest --runInBand test/routes.integration.test.js test/tasks.put.integration.test.js",
