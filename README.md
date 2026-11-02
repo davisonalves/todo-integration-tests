@@ -4,17 +4,13 @@ Suite Jest + Supertest para validar endpoints, status HTTP e corpos de resposta 
 
 ## Executar os testes
 
-Os testes usam Testcontainers para iniciar um PostgreSQL descartavel. A API em `../todo-app` e iniciada como um processo Node local, e o Jest so executa quando ela estiver pronta. E necessario Node.js 20 ou superior, Docker com uma API compativel e as dependencias da aplicacao instaladas:
+O Jest usa Testcontainers para iniciar um PostgreSQL descartavel e a API em `../todo-app` em containers conectados pela mesma rede. E necessario Node.js 20 ou superior e Docker com uma API compativel:
 
 ```bash
 npm test
 ```
 
-```bash
-cd ../todo-app && npm install
-```
-
-O container do banco e encerrado automaticamente ao final dos testes, inclusive quando a suite falha.
+Os containers e a rede sao encerrados automaticamente ao final dos testes.
 
 ## Executar na pipeline
 

@@ -4,16 +4,16 @@
   "private": true,
   "description": "Testes de integracao para a API do todo-app",
   "scripts": {
-    "test": "node test/run-tests.js",
+    "test": "jest --runInBand",
     "test:release": "npm test",
-    "test:get": "node test/run-tests.js test/routes.integration.test.js test/tasks.get.integration.test.js",
-    "test:post": "node test/run-tests.js test/routes.integration.test.js test/tasks.post.integration.test.js",
-    "test:put": "node test/run-tests.js test/routes.integration.test.js test/tasks.put.integration.test.js",
-    "test:delete": "node test/run-tests.js test/routes.integration.test.js test/tasks.delete.integration.test.js"
+    "test:get": "jest --runInBand test/routes.integration.test.js test/tasks.get.integration.test.js",
+    "test:post": "jest --runInBand test/routes.integration.test.js test/tasks.post.integration.test.js",
+    "test:put": "jest --runInBand test/routes.integration.test.js test/tasks.put.integration.test.js",
+    "test:delete": "jest --runInBand test/routes.integration.test.js test/tasks.delete.integration.test.js"
   },
   "devDependencies": {
     "@testcontainers/postgresql": "^12.2.1",
-    "jest": "^30.2.0",
+    "jest": "^30.5.2",
     "supertest": "^7.1.4",
     "testcontainers": "^12.2.1"
   }
