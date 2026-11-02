@@ -4,13 +4,11 @@
   "private": true,
   "description": "Testes de integracao para a API do todo-app",
   "scripts": {
-    "test": "jest --runInBand",
-    "test:integration": "jest --runInBand",
-    "test:get": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.get.integration.test.js",
-    "test:post": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.post.integration.test.js",
-    "test:put": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.put.integration.test.js",
-    "test:delete": "jest --runInBand --runTestsByPath test/routes.integration.test.js test/tasks.delete.integration.test.js",
-    "test:release": "jest --runInBand"
+    "test": "docker compose up --build --exit-code-from integration-tests",
+    "test:get": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.get.integration.test.js' docker compose up --build --exit-code-from integration-tests",
+    "test:post": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.post.integration.test.js' docker compose up --build --exit-code-from integration-tests",
+    "test:put": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.put.integration.test.js' docker compose up --build --exit-code-from integration-tests",
+    "test:delete": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.delete.integration.test.js' docker compose up --build --exit-code-from integration-tests",
   },
   "devDependencies": {
     "jest": "^30.2.0",

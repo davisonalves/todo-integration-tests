@@ -36,8 +36,10 @@ services:
   integration-tests:
     container_name: todo-integration-tests
     build: .
+    command: ["sh", "-c", "npx jest --runInBand $$JEST_TEST_FILES"]
     environment:
       BASE_URL: http://app:3000
+      JEST_TEST_FILES: ${JEST_TEST_FILES:-}
     depends_on:
       app:
         condition: service_healthy

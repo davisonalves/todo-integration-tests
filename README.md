@@ -16,24 +16,17 @@ docker compose up --build --exit-code-from integration-tests
 docker compose down
 ```
 
-## Executar localmente
+## Executar pelo npm
 
-Requer Node.js 20+ e a API acessivel em `http://localhost:3000` (por exemplo, iniciada pelo Compose do todo-app):
+Os scripts npm executam a API, o banco e os testes pelo Docker Compose. Requer Node.js/npm e Docker com o plugin Compose:
 
 ```bash
-npm ci
 npm test
-```
-
-Para usar outra URL, defina `BASE_URL`:
-
-```bash
-BASE_URL=http://localhost:8080 npm test
 ```
 
 ## Executar na pipeline
 
-Para validar somente o método HTTP alterado, execute o script correspondente. Cada comando também roda `routes.integration.test.js`:
+Para validar somente o método HTTP alterado, execute o script correspondente. Cada comando também roda `routes.integration.test.js`. `npm test` e `test:release` executam a suíte completa:
 
 ```bash
 npm run test:get
