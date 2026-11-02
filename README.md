@@ -2,27 +2,19 @@
 
 Suite Jest + Supertest para validar endpoints, status HTTP e corpos de resposta da API descrita em `../todo-app/API.md`.
 
-## Executar com Docker Compose
+## Executar os testes
 
-O Compose cria a aplicacao a partir de `../todo-app`, inicia um PostgreSQL descartavel e so executa os testes quando a API estiver pronta:
-
-```bash
-docker compose up --build --exit-code-from integration-tests
-```
-
-`--exit-code-from` encerra os outros serviços quando os testes terminam e retorna o código de saída da suite. Para também remover os containers depois:
-
-```bash
-docker compose down
-```
-
-## Executar pelo npm
-
-Os scripts npm executam a API, o banco e os testes pelo Docker Compose. Requer Node.js/npm e Docker com o plugin Compose:
+Os testes usam Testcontainers para iniciar um PostgreSQL descartavel. A API em `../todo-app` e iniciada como um processo Node local, e o Jest so executa quando ela estiver pronta. E necessario Node.js 20 ou superior, Docker com uma API compativel e as dependencias da aplicacao instaladas:
 
 ```bash
 npm test
 ```
+
+```bash
+cd ../todo-app && npm install
+```
+
+O container do banco e encerrado automaticamente ao final dos testes, inclusive quando a suite falha.
 
 ## Executar na pipeline
 
@@ -35,7 +27,7 @@ npm run test:put
 npm run test:delete
 ```
 
-Na pipeline de release, execute a suíte completa:
+Na pipeline de release, execute a suite completa:
 
 ```bash
 npm run test:release

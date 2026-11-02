@@ -4,14 +4,17 @@
   "private": true,
   "description": "Testes de integracao para a API do todo-app",
   "scripts": {
-    "test": "docker compose up --build --exit-code-from integration-tests",
-    "test:get": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.get.integration.test.js' docker compose up --build --exit-code-from integration-tests",
-    "test:post": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.post.integration.test.js' docker compose up --build --exit-code-from integration-tests",
-    "test:put": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.put.integration.test.js' docker compose up --build --exit-code-from integration-tests",
-    "test:delete": "JEST_TEST_FILES='test/routes.integration.test.js test/tasks.delete.integration.test.js' docker compose up --build --exit-code-from integration-tests"
+    "test": "node test/run-tests.js",
+    "test:release": "npm test",
+    "test:get": "node test/run-tests.js test/routes.integration.test.js test/tasks.get.integration.test.js",
+    "test:post": "node test/run-tests.js test/routes.integration.test.js test/tasks.post.integration.test.js",
+    "test:put": "node test/run-tests.js test/routes.integration.test.js test/tasks.put.integration.test.js",
+    "test:delete": "node test/run-tests.js test/routes.integration.test.js test/tasks.delete.integration.test.js"
   },
   "devDependencies": {
+    "@testcontainers/postgresql": "^12.2.1",
     "jest": "^30.2.0",
-    "supertest": "^7.1.4"
+    "supertest": "^7.1.4",
+    "testcontainers": "^12.2.1"
   }
 }
